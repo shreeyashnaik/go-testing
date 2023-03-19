@@ -1,0 +1,27 @@
+===Run tests===
+go test .
+
+===Run tests in current & all sub-directories===
+go test ./...
+
+===Run tests using verbose output (what tests passed/failed)===
+go test -v .
+
+===Check test coverage (% code covered)===
+go test -cover .
+
+===Detailed test coverage (what % code is covered)===
+go test -coverprofile=coverage.out
+go tool cover -html=coverage.out
+
+
+===Running a single test===
+go test -run Test_isPrime 
+go test -v -run Test_isPrime
+
+===Running group of tests (test suites)===
+go test -run Test_alpha
+go test -v -run Test_alpha
+
+
+When you are storing something in ctx, you need want to store a primitive in there.
