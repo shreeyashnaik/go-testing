@@ -69,9 +69,6 @@ func Test_application_ipFromContext(t *testing.T) {
 		{"valid", context.WithValue(context.Background(), ctxUserKey, "192.0.2.1"), "192.0.2.1"},
 	}
 
-	// create an app variable
-	app := application{}
-
 	for _, e := range tests {
 		if res := app.ipFromContext(e.ctx); res != e.expectedIPstr {
 			t.Errorf("for %s wrong value returned from ctx: expected %s, got %s", e.name, e.expectedIPstr, res)
